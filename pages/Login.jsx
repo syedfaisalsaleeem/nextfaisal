@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from "./Login.module.css";
-//import LoginCard from '../components/LoginCard1';
+import LoginCard from '../components/LoginCard1';
 export default function Login(){
     return(
         <div>
@@ -23,7 +23,7 @@ export default function Login(){
 
                         </div>
                         <div className={styles.logincardhi2}>
-                            
+                            <LoginCard/>
                         </div>
                         <div className={styles.logincardhi3}>
 
