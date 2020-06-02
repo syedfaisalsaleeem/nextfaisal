@@ -7,16 +7,16 @@ render(){
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>DashBoard</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
       
         
+        <p>Password Validated</p>
         
         
-        <Login/>
         
 
       </main>
