@@ -16,7 +16,9 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Checkbox } from 'semantic-ui-react';
 
 
-class LoginCard extends React.Component{
+
+
+class ResetPasswordCard extends React.Component{
     constructor(props){
         super(props)
         this.state={
@@ -92,37 +94,17 @@ class LoginCard extends React.Component{
                     
                     <form onSubmit={this.handleSubmit} noValidate>
                     
-                        <h5> Log in to your account</h5>
+                        <h5> Reset Password</h5>
                         <div className={styles.email1}>
-                        <TextField multiline size="small" variant="outlined" style={{marginTop:"10px"}} fullWidth  id="name" name="name" label="Enter Username or email"  value={this.state.name} onChange={this.handleChange('name')}/>
+                        <TextField multiline size="small" variant="outlined" style={{marginTop:"10px"}} fullWidth  id="name" name="name" label="Password"  value={this.state.name} onChange={this.handleChange('name')}/>
                         <div className={styles.email} style={{display:this.state.emailvalidate?"none":"flex"}}>
                             <p> Email is not registered</p>
                         </div>
                         </div>
 
                          <div className={styles.email1}>
-                         <FormControl fullWidth style={{marginTop:"20px"}}  variant="outlined" size="small">
-                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                            <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={this.state.showPassword ? 'text' : 'password'}
-                                value={this.state.password}
-                                onChange={this.handleChange('password')}
-                                endAdornment={
-                                <InputAdornment position="end">
-                                    <IconButton
-                                    aria-label="toggle password visibility"
-                                    onClick={this.handleClickShowPassword}
-                                    onMouseDown={this.handleMouseDownPassword}
-                                    edge="end"
-                                    >
-                                    {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
-                                    </IconButton>
-                                </InputAdornment>
-                                }
-                                labelWidth={70}
-                            />
-                        </FormControl>
+                         <TextField multiline size="small" variant="outlined" style={{marginTop:"20px"}} fullWidth  id="name" name="name" label="Confirm Password"  value={this.state.name} onChange={this.handleChange('name')}/>
+                        
                             <div className={styles.email} style={{display:this.state.passwordvalidate?"none":"flex"}}>
                                 <p> Password is not valid</p>
                             </div>
@@ -130,29 +112,15 @@ class LoginCard extends React.Component{
                         </div>   
 
                         
-        
-                        
-                        <Checkbox className={styles.remember} label="Remember Me" checked={this.state.checkedA} name="checkedA" onChange={this.handleChange1} />
+    
         
         
         
                         
         
                         <div className={styles.loginb} >
-                        <button className={styles.login}> Log In</button>
+                        <button className={styles.login}> Confirm Password</button>
                         
-                        </div>
-                        <hr className={styles.hrline}/>
-                        <div className={styles.loginfooter}>
-                            <div className={styles.loginfooter1}>
-                                <Link href="/CantLogin">
-                                <p> Can't log in ?</p>
-                                </Link>
-                                
-                            </div>
-                            <div className={styles.loginfooter2}>
-                                <p> Contact Support</p>
-                            </div>
                         </div>
                     </form>
                     </div>
@@ -162,4 +130,4 @@ class LoginCard extends React.Component{
 
 }
 }
-export default LoginCard
+export default ResetPasswordCard;
