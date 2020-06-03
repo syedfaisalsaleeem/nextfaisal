@@ -94,14 +94,14 @@ class LoginCard extends React.Component{
                     
                         <h5> Log in to your account</h5>
                         <div className={styles.email1}>
-                        <TextField multiline size="small" variant="outlined" style={{marginTop:"10px"}} fullWidth  id="name" name="name" label="Enter Username or email"  value={this.state.name} onChange={this.handleChange('name')}/>
+                        <TextField multiline size="small" variant="outlined" style={{marginTop:"2%"}} fullWidth  id="name" name="name" label="Enter Username or email"  value={this.state.name} onChange={this.handleChange('name')}/>
                         <div className={styles.email} style={{display:this.state.emailvalidate?"none":"flex"}}>
                             <p> Email is not registered</p>
                         </div>
                         </div>
 
                          <div className={styles.email1}>
-                         <FormControl fullWidth style={{marginTop:"20px"}}  variant="outlined" size="small">
+                         <FormControl fullWidth style={{marginTop:"5%"}}  variant="outlined" size="small">
                             <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                             <OutlinedInput
                                 id="outlined-adornment-password"

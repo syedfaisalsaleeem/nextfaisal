@@ -38,6 +38,7 @@
 
 }
 .footercard{
+    margin-bottom: 0px;
     display:flex;
     height:29%;
     width: 100vw;
@@ -89,6 +90,7 @@
     max-width: auto;
 }
 .footercardc{
+    
 display: flex;
 flex-direction: column;
 height: 65%;
@@ -174,6 +176,7 @@ font-size: 1.1vw;
     /* For mobile phones: */
 
     .logincardhi2{
+        
         display: flex;
         
         flex-basis: 40%;
@@ -190,7 +193,7 @@ font-size: 1.1vw;
     .logod img{
         margin-left: 20%;
         height: auto;
-        width: 60%;
+        width: 65%;
       /* even more control with max-width */
         max-width: auto;
     }
@@ -203,5 +206,21 @@ font-size: 1.1vw;
         flex-basis: 60%;
         
     
+    }
+}
+@media only screen and (max-height: 600px){
+    .logincardhi2{
+        position: relative;
+        display: flex;
+        
+        flex-basis: 50%;
+        height:55vw;
+        
+    
+    }
+    .footercard{
+        margin-top: 55vh;
+
+        
     }
 }

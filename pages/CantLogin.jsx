@@ -19,19 +19,13 @@ export default function CantLogin(){
             <div className={styles.logind}>
                 <div className={styles.logincard}>
                     <div className={styles.logincardh}>
-                        <div className={styles.logincardhi1}>
 
-                        </div>
                         <div className={styles.logincardhi2}>
                             <CantLoginCard/>
                         </div>
-                        <div className={styles.logincardhi3}>
-
-                        </div>
-                    </div>
-                    <div className={styles.logincardh1}>
 
                     </div>
+
                 </div>
                 <div className={styles.footercard}>
                         <div className={styles.footercardh}>

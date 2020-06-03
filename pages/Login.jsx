@@ -6,7 +6,7 @@ export default function Login(){
         <div>
         <Head>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"></meta>
+        <meta name="viewport" content="width=device-width"/>
         </Head>
         <main>
         <div className={styles.logincontainer}>
