@@ -93,42 +93,45 @@ class LoginCard extends React.Component{
                     <form onSubmit={this.handleSubmit} noValidate>
                     
                         <h5> Log in to your account</h5>
-                        <div className={styles.email1}>
-                        <TextField multiline size="small" variant="outlined" style={{marginTop:"2%"}} fullWidth  id="name" name="name" label="Enter Username or email"  value={this.state.name} onChange={this.handleChange('name')}/>
-                        <div className={styles.email} style={{display:this.state.emailvalidate?"none":"flex"}}>
-                            <p> Email is not registered</p>
-                        </div>
-                        </div>
-
-                         <div className={styles.email1}>
-                         <FormControl fullWidth style={{marginTop:"5%"}}  variant="outlined" size="small">
-                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                            <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={this.state.showPassword ? 'text' : 'password'}
-                                value={this.state.password}
-                                onChange={this.handleChange('password')}
-                                endAdornment={
-                                <InputAdornment position="end">
-                                    <IconButton
-                                    aria-label="toggle password visibility"
-                                    onClick={this.handleClickShowPassword}
-                                    onMouseDown={this.handleMouseDownPassword}
-                                    edge="end"
-                                    >
-                                    {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
-                                    </IconButton>
-                                </InputAdornment>
-                                }
-                                labelWidth={70}
-                            />
-                        </FormControl>
-                            <div className={styles.email} style={{display:this.state.passwordvalidate?"none":"flex"}}>
-                                <p> Password is not valid</p>
+                        <div className={styles.email11}>
+                            <div className={styles.email1}>
+                            <TextField multiline size="small" variant="outlined" style={{marginTop:"2%"}} fullWidth  id="name" name="name" label="Enter Username or email"  value={this.state.name} onChange={this.handleChange('name')}/>
+                            <div className={styles.email} style={{display:this.state.emailvalidate?"none":"flex"}}>
+                                <p> Email is not registered</p>
                             </div>
-                        
-                        </div>   
+                            </div>
 
+                            <div className={styles.email1}>
+                            <FormControl fullWidth style={{marginTop:"5%"}}  variant="outlined" size="small">
+                                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                                <OutlinedInput
+                                    id="outlined-adornment-password"
+                                    type={this.state.showPassword ? 'text' : 'password'}
+                                    value={this.state.password}
+                                    onChange={this.handleChange('password')}
+                                    endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                        aria-label="toggle password visibility"
+                                        onClick={this.handleClickShowPassword}
+                                        onMouseDown={this.handleMouseDownPassword}
+                                        edge="end"
+                                        >
+                                        {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                    }
+                                    labelWidth={70}
+                                />
+                            </FormControl>
+                                <div className={styles.email} style={{display:this.state.passwordvalidate?"none":"flex"}}>
+                                    <p> Password is not valid</p>
+                                </div>
+                            
+                            </div>   
+
+                        </div>
+                        
                         
         
                         

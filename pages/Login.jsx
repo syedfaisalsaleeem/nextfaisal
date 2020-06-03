@@ -1,12 +1,56 @@
 import Head from 'next/head';
 import styles from "./Login.module.css";
 import LoginCard from '../components/LoginCard1';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+// The `withStyles()` higher-order component is injecting a `classes`
+// prop that is used by the `Button` component.
+const StyledCard = withStyles({
+  root1: {
+    background: 'white',
+    borderRadius: 3,
+    border: 0,
+    color: 'black',
+    width:"200rem",
+    minWidth: 275,
+    
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+  },
+  label: {
+    textTransform: 'capitalize',
+  },
+})(Card);
+const useStyles = makeStyles((theme)=>({
+    f1: {
+        background: 'white',
+        borderRadius: 3,
+        border: 0,
+        color: 'black',
+        width:"100vw",
+        minWidth: 275,
+        
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    },
+    textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        width: '25ch',
+      },
+  }))
 export default function Login(){
+    const classes = useStyles();
     return(
         <div>
         <Head>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
-        <meta name="viewport" content="width=device-width"/>
+
+        <meta
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
         </Head>
         <main>
         <div className={styles.logincontainer}>
@@ -22,7 +66,14 @@ export default function Login(){
                     <div className={styles.logincardh}>
 
                         <div className={styles.logincardhi2}>
-                            <LoginCard/>
+                        
+                            <StyledCard className={classes.f1}>
+                                <CardContent>
+                                <LoginCard/>
+                                </CardContent>
+                            
+                            </StyledCard>
+                           
                         </div>
 
                     </div>

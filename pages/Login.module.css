@@ -38,9 +38,6 @@
 
 }
 .footercard{
-    position: relative;
-    left: 0;
-    bottom:0;
     margin-bottom: 0px;
     display:flex;
     height:29%;
@@ -68,7 +65,7 @@
     display:flex;
     flex-direction: column;
     height:100%;
-    width: 71%;
+    width: 100%;
     
 }
 .footercardh1{
@@ -202,61 +199,32 @@ font-size: 1.1vw;
     }
 
 }
-@media only screen and (max-width: 850px) {
-    /* For mobile phones: */
-
-    .logincardhi2{
-        
-
-        height:100vh;
-        
-    
-    }
-    
-    .footercard{
-        margin-top: 75vh;
-
-        
-    }
-
-}
 @media only screen and (max-width: 600px){
     .logincardhi2{
         display: flex;
         
-        flex-basis: 60%;
-        height:50vh;
+        flex-basis: 80%;
         
     
     }
+        .footercard{
+        margin-top: 5vh;
 
+        
+    }
 }
 @media only screen and (max-height: 600px){
     .logincardhi2{
-        position: relative;
+        
         display: flex;
         
         flex-basis: 60%;
-        height:100vh;
+        height:55vh;
         
     
     }
     .footercard{
-        margin-top: 65vh;
-
-        
-    }
-}
-@media only screen and (max-height: 400px){
-    .logincardhi2{
-        position: relative;
-
-        height:100vh;
-        
-    
-    }
-    .footercard{
-        margin-top: 95vh;
+        margin-top: 5vh;
 
         
     }
