@@ -204,6 +204,8 @@ font-size: 1.1vw;
         display: flex;
         
         flex-basis: 80%;
+        width:20%;
+        height:100%;
         
     
     }
@@ -218,8 +220,10 @@ font-size: 1.1vw;
         
         display: flex;
         
-        flex-basis: 60%;
-        height:55vh;
+        flex-basis: 80%;
+        height:100%;
+
+        
         
     
     }
