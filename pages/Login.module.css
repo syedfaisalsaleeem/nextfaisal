@@ -38,6 +38,9 @@
 
 }
 .footercard{
+    position: relative;
+    left: 0;
+    bottom:0;
     margin-bottom: 0px;
     display:flex;
     height:29%;
@@ -204,8 +207,14 @@ font-size: 1.1vw;
         display: flex;
         
         flex-basis: 60%;
+        height:50vh;
         
     
+    }
+    .footercard{
+        
+
+        
     }
 }
 @media only screen and (max-height: 600px){
@@ -213,8 +222,22 @@ font-size: 1.1vw;
         position: relative;
         display: flex;
         
-        flex-basis: 50%;
-        height:55vw;
+        flex-basis: 60%;
+        height:60vh;
+        
+    
+    }
+    .footercard{
+        margin-top: 55vh;
+
+        
+    }
+}
+@media only screen and (max-height: 400px){
+    .logincardhi2{
+        position: relative;
+
+        height:100vh;
         
     
     }
