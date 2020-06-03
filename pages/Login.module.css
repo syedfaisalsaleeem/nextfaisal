@@ -202,6 +202,24 @@ font-size: 1.1vw;
     }
 
 }
+@media only screen and (max-width: 850px) {
+    /* For mobile phones: */
+
+    .logincardhi2{
+        
+
+        height:100vh;
+        
+    
+    }
+    
+    .footercard{
+        margin-top: 75vh;
+
+        
+    }
+
+}
 @media only screen and (max-width: 600px){
     .logincardhi2{
         display: flex;
@@ -211,11 +229,7 @@ font-size: 1.1vw;
         
     
     }
-    .footercard{
-        
 
-        
-    }
 }
 @media only screen and (max-height: 600px){
     .logincardhi2{
@@ -223,12 +237,12 @@ font-size: 1.1vw;
         display: flex;
         
         flex-basis: 60%;
-        height:60vh;
+        height:100vh;
         
     
     }
     .footercard{
-        margin-top: 55vh;
+        margin-top: 65vh;
 
         
     }
@@ -242,7 +256,7 @@ font-size: 1.1vw;
     
     }
     .footercard{
-        margin-top: 55vh;
+        margin-top: 95vh;
 
         
     }
