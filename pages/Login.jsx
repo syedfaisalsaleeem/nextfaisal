@@ -4,7 +4,6 @@ import LoginCard from '../components/LoginCard1';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 // The `withStyles()` higher-order component is injecting a `classes`
 // prop that is used by the `Button` component.
@@ -67,12 +66,12 @@ export default function Login(){
 
                         <div className={styles.logincardhi2}>
                         
-                            <StyledCard className={classes.f1}>
+                            <Card className={classes.f1}>
                                 <CardContent>
                                 <LoginCard/>
                                 </CardContent>
                             
-                            </StyledCard>
+                            </Card>
                            
                         </div>
 

@@ -1,7 +1,29 @@
 import Head from 'next/head';
 import styles from "./ResetPassword.module.css";
-import ResetPasswordCard from "../components/RCard"
+import ResetPasswordCard from "../components/RCard";
+import CantLoginCard from '../components/CantLoginCard';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles((theme)=>({
+    f1: {
+        background: 'white',
+        borderRadius: 3,
+        border: 0,
+        color: 'black',
+        width:"100vw",
+        minWidth: 275,
+        
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    },
+    textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        width: '25ch',
+      },
+  }))
 export default function ResetPassword(){
+    const classes = useStyles();
     return(
         <div>
         <Head>
@@ -20,19 +42,19 @@ export default function ResetPassword(){
             <div className={styles.logind}>
                 <div className={styles.logincard}>
                     <div className={styles.logincardh}>
-                        <div className={styles.logincardhi1}>
 
-                        </div>
                         <div className={styles.logincardhi2}>
-                        <ResetPasswordCard/>
+                        <Card className={classes.f1}>
+                                <CardContent>
+                                <ResetPasswordCard/>
+                                </CardContent>
+                            
+                            </Card>
+                        
                         </div>
-                        <div className={styles.logincardhi3}>
-
-                        </div>
-                    </div>
-                    <div className={styles.logincardh1}>
 
                     </div>
+
                 </div>
                 <div className={styles.footercard}>
                         <div className={styles.footercardh}>

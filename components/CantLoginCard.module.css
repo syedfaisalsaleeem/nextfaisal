@@ -1,4 +1,5 @@
 .containerlogincard{
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,9 +12,8 @@ height: 100%;
     flex-direction: column;
     width:65%;
     height: 90%;
-    margin-top: 85px;
+    margin-top: 15%;
     justify-content: flex-start;
-    
     
    
 
@@ -61,7 +61,7 @@ height: 100%;
   .loginb{
       display: flex;
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 10px;
   }
 
 .loginfooter{
@@ -172,3 +172,23 @@ height: 100%;
         
     }
 }
+@media only screen and (max-height: 650px){
+    .containerlogincardin{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0%;
+        width: 97%;
+        
+    }
+
+    .email11{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .email1{
+
+        width:100%;
+        background-color: #FFFFFF;
+    }
+  }

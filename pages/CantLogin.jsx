@@ -1,7 +1,29 @@
 import Head from 'next/head';
 import styles from "./Login.module.css";
 import CantLoginCard from '../components/CantLoginCard';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import { withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles((theme)=>({
+    f1: {
+        background: 'white',
+        borderRadius: 3,
+        border: 0,
+        color: 'black',
+        width:"100vw",
+        minWidth: 275,
+        
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    },
+    textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        width: '25ch',
+      },
+  }))
 export default function CantLogin(){
+    const classes = useStyles();
     return(
         <div>
         <Head>
@@ -21,7 +43,13 @@ export default function CantLogin(){
                     <div className={styles.logincardh}>
 
                         <div className={styles.logincardhi2}>
-                            <CantLoginCard/>
+                            <Card className={classes.f1}>
+                                <CardContent>
+                                <CantLoginCard/>
+                                </CardContent>
+                            
+                            </Card>
+                            
                         </div>
 
                     </div>
