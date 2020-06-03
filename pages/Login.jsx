@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme)=>({
         color: 'black',
         width:"100vw",
         minWidth: 275,
-        
         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     },
     textField: {
