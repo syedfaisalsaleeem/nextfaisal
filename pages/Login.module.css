@@ -47,9 +47,10 @@
     display:flex;
     flex-direction: row;
     height:90%;
-    width: 71vw;
+    width: 100%;
     
-    min-height: 90%;
+
+    justify-content: center;
     
 }
 .logincardh1{
@@ -154,8 +155,8 @@ font-size: 1.1vw;
 }
 .logincardhi2{
     display: flex;
-    flex-basis: 48%;
-    min-width: 48%;
+    flex-basis: 28%;
+    min-width: 28%;
     border: solid;
     border-color: whitesmoke;
     border-width: 1px;
@@ -171,31 +172,36 @@ font-size: 1.1vw;
 }
 @media only screen and (max-width: 1200px) {
     /* For mobile phones: */
-    .logincardhi1{
-        display: flex;
-        
-        flex-basis: 10%;
-        
-    
-    }
+
     .logincardhi2{
         display: flex;
         
-        flex-basis: 90%;
+        flex-basis: 40%;
         
     
     }
-    .logincardhi3{
-        display: flex;
-        flex-basis: 0%;
-        
     
-    }
     .footercardh1 img{
         height: auto;
         width: 100%;
       /* even more control with max-width */
         max-width: auto;
     }
+    .logod img{
+        margin-left: 20%;
+        height: auto;
+        width: 60%;
+      /* even more control with max-width */
+        max-width: auto;
+    }
 
-} 
+}
+@media only screen and (max-width: 600px){
+    .logincardhi2{
+        display: flex;
+        
+        flex-basis: 60%;
+        
+    
+    }
+}

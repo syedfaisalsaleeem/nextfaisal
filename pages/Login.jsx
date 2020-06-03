@@ -6,6 +6,7 @@ export default function Login(){
         <div>
         <Head>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"></meta>
         </Head>
         <main>
         <div className={styles.logincontainer}>
@@ -19,19 +20,13 @@ export default function Login(){
             <div className={styles.logind}>
                 <div className={styles.logincard}>
                     <div className={styles.logincardh}>
-                        <div className={styles.logincardhi1}>
 
-                        </div>
                         <div className={styles.logincardhi2}>
                             <LoginCard/>
                         </div>
-                        <div className={styles.logincardhi3}>
-
-                        </div>
-                    </div>
-                    <div className={styles.logincardh1}>
 
                     </div>
+
                 </div>
                 <div className={styles.footercard}>
                         <div className={styles.footercardh}>
