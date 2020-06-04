@@ -122,7 +122,7 @@ export default function CyberDrawer() {
         <Divider />
         <List className={classes.ltext}>
             <ListItem >
-                <ListItemIcon><img src="Dashboard.png" width="28px" height="28px" /> </ListItemIcon>
+                <ListItemIcon><img src="dashboard.png" width="28px" height="28px" /> </ListItemIcon>
                 <ListItemText  disableTypography = {"false"}   primary={"Home"}/>
             </ListItem>
             <ListItem>
@@ -130,7 +130,7 @@ export default function CyberDrawer() {
                 <ListItemText disableTypography = {"false"} primary={"Discover"}/>
             </ListItem>
             <ListItem>
-                <ListItemIcon><img src="ExposedInformation.png" width="28px" height="28px" /> </ListItemIcon>
+                <ListItemIcon><img src="information.png" width="28px" height="28px" /> </ListItemIcon>
                 <ListItemText disableTypography = {"false"} primary={"Exposed Information"}/>
             </ListItem>
             <ListItem>
