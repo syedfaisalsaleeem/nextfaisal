@@ -32,7 +32,7 @@ class CantLoginCard extends React.Component{
       handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state.name,this.state.password)
-        if(this.state.name!="faisal"){
+        if(this.state.name!="miko"){
                 this.setState({passwordvalidate:true,emailvalidate:false,authenticate:false})
         }
 

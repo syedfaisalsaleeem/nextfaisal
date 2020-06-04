@@ -179,8 +179,9 @@ font-size: 1.1vw;
         
         display: flex;
         
-        flex-basis: 40%;
-        
+        flex-basis: 20%;
+        height:80%;
+        justify-content: center;
     
     }
     
@@ -206,7 +207,7 @@ font-size: 1.1vw;
         flex-basis: 80%;
         width:20%;
         height:100%;
-        
+        justify-content: center;
     
     }
         .footercard{
@@ -220,15 +221,36 @@ font-size: 1.1vw;
         
         display: flex;
         
-        flex-basis: 80%;
+        flex-basis: 28%;
+        width:20%;
         height:140%;
+        justify-content: center;
+        
+        
+    
+    }
+    .footercard{
+        margin-top: 35vh;
+
+        
+    }
+}
+@media only screen and (max-height: 400px){
+    .logincardhi2{
+        
+        display: flex;
+        
+        flex-basis: 28%;
+        width:20%;
+        height:220%;
+        justify-content: center;
 
         
         
     
     }
     .footercard{
-        margin-top: 25vh;
+        margin-top: 55vh;
 
         
     }

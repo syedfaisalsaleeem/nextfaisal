@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Login from "./Login";
 import React from 'react';
-
+import Header from "../components/Header";
+import CyberDrawer from "../components/Drawer"
 class Home extends React.Component {
 render(){  
   return (
@@ -12,14 +13,8 @@ render(){
       </Head>
 
       <main>
-      
-        
-        
-        
-        <h1>
-            Logged In
-        </h1>
-        
+        <Header/>
+        <CyberDrawer/>
 
       </main>
 
