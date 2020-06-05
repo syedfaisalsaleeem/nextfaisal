@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from "next/link"
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -16,9 +15,9 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import Footer from './Footer';
+import Footer from '../Footer';
+import Link from "next/link"
+import Swindow from './Swindow';
 const drawerWidth = 280;
 
 const useStyles = makeStyles((theme) => ({
@@ -85,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(2),
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -97,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 0,
+    marginLeft: -10,
   },
 }));
 
@@ -127,15 +126,17 @@ export default function CyberDrawer() {
           paper: classes.drawerPaper,
         }}
       >
-
         <Divider/>
+        
+        
+
         <List className={classes.ltext}>
-          
-            <ListItem  className={classes.ltext1} style={{backgroundColor:"rgba(108, 114, 147, 0.3)"}}>
-                <ListItemIcon><img src="dashboard.png" width="28px" height="28px"  /> </ListItemIcon>
-                <ListItemText  disableTypography = {"false"}   primary={"Home"}/>
-            </ListItem>
-            
+          <Link href="/Dashboard">
+                <ListItem  className={classes.ltext1}>
+                    <ListItemIcon><img src="dashboard.png" width="28px" height="28px" /> </ListItemIcon>
+                    <ListItemText  disableTypography = {"false"}   primary={"Home"}/>
+                </ListItem>
+            </Link>
             <ListItem className={classes.ltext1}>
                 <ListItemIcon><img src="discovery.png" width="28px" height="28px" /> </ListItemIcon>
                 <ListItemText disableTypography = {"false"} primary={"Discover"}/>
@@ -148,12 +149,10 @@ export default function CyberDrawer() {
                 <ListItemIcon><img src="exposedsystems.png" width="28px" height="28px" /> </ListItemIcon>
                 <ListItemText disableTypography = {"false"} primary={"Exposed Systems"}/>
             </ListItem>
-            <Link href="/Settings">
-            <ListItem className={classes.ltext1}>
+            <ListItem className={classes.ltext1} style={{backgroundColor:"rgba(108, 114, 147, 0.3)"}}>
                 <ListItemIcon><img src="settings.png" width="28px" height="28px" />  </ListItemIcon>
                 <ListItemText  disableTypography = {"false"} primary={"Settings"}/>
             </ListItem>
-            </Link>
             <ListItem className={classes.ltext1}>
                 <ListItemIcon><img src="support.png" width="28px" height="28px" /> </ListItemIcon>
                 <ListItemText disableTypography = {"false"} primary={"Support"}/>
@@ -168,32 +167,17 @@ export default function CyberDrawer() {
           [classes.contentShift]: open,
         })}
       >
+        
         <div className={classes.drawerHeader} />
+        
         <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-          facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-          gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-          donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-          Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-          imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-          arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-          donec massa sapien faucibus et molestie ac.
+          
+          <Swindow/>
         </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-          facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-          tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-          consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-          vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-          hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-          tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-          nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-          accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+
         
       </main>
+      
       <footer>
       
       </footer>

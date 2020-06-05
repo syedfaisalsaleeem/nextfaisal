@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react';
 import Header from "../components/Header";
-import CyberDrawer from "../components/Drawer"
+import CyberDrawer from "../components/Settings/Drawer1"
 
 class Home extends React.Component {
 render(){  

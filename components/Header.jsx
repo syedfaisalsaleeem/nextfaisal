@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
       position:"fixed",
       backgroundColor:"white",
       color:"black",
-      height:"80px",
+      height:"70px",
       width:"100%",
       border: "10px solid #FFFFFF",
     boxSizing: "border-box",
@@ -65,7 +65,7 @@ userlogo:{
 },
 userp:{
     background:"#D7F9EF",
-    fontFamily: "Poppins",
+    fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight:"normal",
     fontSize:"18.8px",
