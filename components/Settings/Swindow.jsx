@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import Divider from "@material-ui/core/Divider"
-import { Button } from '@material-ui/core';
+import { Button, FormControl } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -15,6 +15,20 @@ import SecurityOutlinedIcon from '@material-ui/icons/SecurityOutlined';
 import NotificationsNoneOutlinedIcon from '@material-ui/icons/NotificationsNoneOutlined';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import CancelIcon from '@material-ui/icons/Cancel';
+import Account from "./Modal/Account";
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import CloseIcon from '@material-ui/icons/Close';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Switch from '@material-ui/core/Switch';
+import { withStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -37,9 +51,98 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.text.secondary,
     },
   }));
-
+  const IOSSwitch = withStyles((theme) => ({
+    root: {
+      width: 42,
+      height: 26,
+      padding: 0,
+      margin: theme.spacing(1),
+    },
+    switchBase: {
+      padding: 1,
+      '&$checked': {
+        transform: 'translateX(16px)',
+        color: theme.palette.common.white,
+        '& + $track': {
+          backgroundColor: '#52d869',
+          opacity: 1,
+          border: 'none',
+        },
+      },
+      '&$focusVisible $thumb': {
+        color: '#52d869',
+        border: '6px solid #fff',
+      },
+    },
+    thumb: {
+      width: 24,
+      height: 24,
+    },
+    track: {
+      borderRadius: 26 / 2,
+      border: `1px solid ${theme.palette.grey[400]}`,
+      backgroundColor: theme.palette.grey[50],
+      opacity: 1,
+      transition: theme.transitions.create(['background-color', 'border']),
+    },
+    checked: {},
+    focusVisible: {},
+  }))(({ classes, ...props }) => {
+    return (
+      <Switch
+        focusVisibleClassName={classes.focusVisible}
+        disableRipple
+        classes={{
+          root: classes.root,
+          switchBase: classes.switchBase,
+          thumb: classes.thumb,
+          track: classes.track,
+          checked: classes.checked,
+        }}
+        {...props}
+      />
+    );
+  });
 export default function Swindow(){
     const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+    const [open1, setOpen1] = React.useState(false);
+    const [open2, setOpen2] = React.useState(false);
+    const [opens, setOpens] = React.useState(false);
+    const [state, setState] = React.useState({
+        checkedA: true,
+        checkedB: true,
+        checkedC: true,
+      });
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+    const handleSubmission = () => {
+        setOpens(true);
+      };
+    const handleSubmissionClose = () => {
+        setOpens(false);
+      };
+    const handleClose = () => {
+      setOpen(false);
+    };
+    const handleClickOpen1 = () => {
+        setOpen1(true);
+      };
+    
+      const handleClose1 = () => {
+        setOpen1(false);
+      };
+      const handleClickOpen2 = () => {
+        setOpen2(true);
+      };
+    
+      const handleClose2 = () => {
+        setOpen2(false);
+      };
+      const handleChange4 = (event) => {
+        setState({ ...state, [event.target.name]: event.target.checked });
+      };
     return(
         <React.Fragment>
         <CssBaseline />
@@ -52,6 +155,7 @@ export default function Swindow(){
                         <Grid item style={{height:"100%"}}>
                             <Typography component="div" style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center"}}>
                             <AccountCircleOutlinedIcon/>
+                            
                             </Typography>
                         
                         </Grid>
@@ -68,7 +172,143 @@ export default function Swindow(){
                             
                             </Grid>
                             <Grid item xs={4} style={{display:"flex",height:"6.7vh",justifyContent:"flex-end",alignItems:"center"}}>
-                                <Button variant="contained" color="primary" >Update</Button>
+                                <Button variant="contained" color="primary" onClick={handleClickOpen} >Update</Button>
+                                <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
+                                    
+                                    
+                                    <DialogTitle>
+                                    <Grid container style={{height:"6vh",display:"flex"}} >
+                                        <Grid items xs={11} style={{height:"6vh",display:"flex"}}>
+                                            <Grid container spacing={2}>
+                                            <Grid item>
+                                            </Grid>
+                                            <Grid item>
+                                                <Typography component="div" style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center"}}>
+                                                <AccountCircleOutlinedIcon />
+                                                
+                                                </Typography>
+                                            
+                                            </Grid>
+                                            <Grid item xs={5}>
+                                                <Typography style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center",marginLeft:"-5px"}}>Account Information </Typography>
+                                            
+                                            </Grid>
+                                            </Grid>
+                                        
+                                        </Grid>
+                                        
+                                        <Grid items xs={1} style={{height:"6vh",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                                        
+                                        <CloseIcon onClick={handleClose} />
+                                        
+                                            
+                                        </Grid>
+                                        
+                                        
+                                        
+                                    </Grid>
+                                    </DialogTitle>
+
+                                    
+                                    
+                                    <Divider/>
+                                    <DialogContent style={{height:"100vh",width:"31vw"}}>
+                                    <DialogContentText>
+
+                                    </DialogContentText>
+                                    <Typography >
+                                        Company Name
+                                    </Typography>
+                                    <TextField
+                                        autoFocus
+                                        margin="dense"
+                                        id="name"
+                                        label="Company Name"
+                                        type="email"
+                                        variant="outlined"
+                                        fullWidth
+                                        
+                                    />
+                                    
+                                    <Typography style={{marginTop:"15px"}}>
+                                        Company Industry
+                                    </Typography>
+                                    <TextField
+                                        autoFocus
+                                        margin="dense"
+                                        id="name"
+                                        label="Email Address"
+                                        type="email"
+                                        variant="outlined"
+                                        fullWidth
+                                    />
+                                    <Typography style={{marginTop:"15px"}}>
+                                        Company Address
+                                    </Typography>
+                                    <TextField
+                                        autoFocus
+                                        margin="dense"
+                                        id="name"
+                                        label="Company Address"
+                                        type="email"
+                                        variant="outlined"
+                                        fullWidth
+                                    />
+                                    <Typography style={{marginTop:"15px"}}>
+                                        Contact Person
+                                    </Typography>
+                                    <TextField
+                                        autoFocus
+                                        margin="dense"
+                                        id="name"
+                                        label="Contact Person"
+                                        type="email"
+                                        variant="outlined"
+                                        fullWidth
+                                    />
+                                    <Typography style={{marginTop:"15px"}}>
+                                        Contact Person Position
+                                    </Typography>
+                                    <TextField
+                                        autoFocus
+                                        margin="dense"
+                                        id="name"
+                                        label="Contact Person Position"
+                                        type="email"
+                                        variant="outlined"
+                                        fullWidth
+                                    />
+                                    <Typography style={{marginTop:"15px"}}>
+                                        Contact Person Email
+                                    </Typography>
+                                    <TextField
+                                        autoFocus
+                                        margin="dense"
+                                        id="name"
+                                        label="Contact Person Email"
+                                        type="email"
+                                        variant="outlined"
+                                        fullWidth
+                                    />
+                                    <Typography style={{marginTop:"15px"}}>
+                                        Contact Person Number
+                                    </Typography>
+                                    <TextField
+                                        autoFocus
+                                        margin="dense"
+                                        id="name"
+                                        label="Contact Person Number"
+                                        type="email"
+                                        variant="outlined"
+                                        fullWidth
+                                    />
+                                    <Typography component="div" style={{display:"flex",width:"100",justifyContent:"center",marginTop:"15px"}}>
+                                    <Button color="primary" variant="contained" onClick={handleSubmission}> Update Information</Button>
+                                    </Typography>
+                                    
+                                    </DialogContent>
+
+                                </Dialog>
                             </Grid>
                         </Grid>
                     
@@ -175,7 +415,146 @@ export default function Swindow(){
                             
                             </Grid>
                             <Grid item xs={4} style={{display:"flex",height:"6.7vh",justifyContent:"flex-end",alignItems:"center"}}>
-                                <Button variant="contained" color="primary" >Update</Button>
+                                <Button variant="contained" color="primary" onClick={handleClickOpen1} >Update</Button>
+                                    <Dialog open={open1} onClose={handleClose1} aria-labelledby="form-dialog-title" >
+                                        <DialogTitle>
+                                        <Grid container style={{height:"6vh",display:"flex"}} >
+                                            <Grid items xs={11} style={{height:"6vh",display:"flex"}}>
+                                                <Grid container spacing={2}>
+                                                <Grid item>
+                                                </Grid>
+                                                <Grid item>
+                                                    <Typography component="div" style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center"}}>
+                                                    <SecurityOutlinedIcon />
+                                                    
+                                                    </Typography>
+                                                
+                                                </Grid>
+                                                <Grid item xs={5}>
+                                                    <Typography style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center",marginLeft:"-5px"}}>Security Information </Typography>
+                                                
+                                                </Grid>
+                                                </Grid>
+                                            
+                                            </Grid>
+                                            
+                                            <Grid items xs={1} style={{height:"6vh",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                                            
+                                            <CloseIcon onClick={handleClose1} />
+                                            
+                                                
+                                            </Grid>
+                                            
+                                            
+                                            
+                                        </Grid>
+                                        </DialogTitle>
+
+                                        <Divider/>
+                                        <DialogContent style={{height:"100vh",width:"31vw"}}>
+                                        <DialogContentText>
+
+                                        </DialogContentText>
+                                        <Typography >
+                                            Enter Current Password
+                                        </Typography>
+                                        <TextField
+                                            autoFocus
+                                            margin="dense"
+                                            id="name"
+                                            label="Enter Password"
+                                            type="email"
+                                            variant="outlined"
+                                            fullWidth
+                                            
+                                        />
+                                        <Typography style={{marginTop:"15px"}}>
+                                        Enter New Password
+                                        </Typography>
+                                        <TextField
+                                            autoFocus
+                                            margin="dense"
+                                            id="name"
+                                            label="Enter Password"
+                                            type="email"
+                                            variant="outlined"
+                                            fullWidth
+                                        />
+                                        <Typography style={{marginTop:"15px"}}>
+                                        Renter New Password
+                                        </Typography>
+                                        <TextField
+                                            autoFocus
+                                            margin="dense"
+                                            id="name"
+                                            label="Enter Password"
+                                            type="email"
+                                            variant="outlined"
+                                            fullWidth
+                                        />
+                                        <Typography component="div" style={{display:"flex",width:"100",justifyContent:"center",marginTop:"15px"}}>
+                                        <Button color="primary" variant="contained" onClick={handleSubmission}> Update Password</Button>
+                                        </Typography>
+                                        <Divider style={{marginTop:"15px"}}/>
+                                        </DialogContent>
+                                    </Dialog>
+                                    <Dialog
+                                        open={opens}
+                                        onClose={handleSubmissionClose}
+                                        aria-labelledby="alert-dialog-title"
+                                        aria-describedby="alert-dialog-description"
+                                        
+                                    >
+                                        <DialogTitle>
+                                        <Grid container style={{height:"6vh",display:"flex"}} >
+                                            <Grid items xs={11} style={{height:"6vh",display:"flex"}}>
+                                                <Grid container spacing={2}>
+                                                <Grid item>
+                                                </Grid>
+                                                <Grid item>
+                                                    <Typography component="div" style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center"}}>
+                                                    
+                                                    
+                                                    </Typography>
+                                                
+                                                </Grid>
+                                                <Grid item xs={5}>
+                                                    <Typography style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center",marginLeft:"-5px"}}>Authorize Change </Typography>
+                                                
+                                                </Grid>
+                                                </Grid>
+                                            
+                                            </Grid>
+                                            
+                                            <Grid items xs={1} style={{height:"6vh",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                                            
+                                            <CloseIcon onClick={handleSubmissionClose} />
+                                            
+                                                
+                                            </Grid>
+                                            
+                                            
+                                            
+                                        </Grid>
+                                        </DialogTitle>
+                                        <Divider/>
+                                        <DialogContent style={{width:"22vw"}}>
+                                        <DialogContentText id="alert-dialog-description">
+                                        You are about to proceed to make changes to your account this once submitted they will overwrite current data and settings. Do you wish to still continue ? 
+                                        </DialogContentText>
+                                        </DialogContent>
+                                        <Divider/>
+                                        <Typography style={{marginTop:"15px", display:"flex",justifyContent:"space-evenly",alignItems:"center" ,marginBottom:"20px"}}>
+                                        <Button onClick={handleSubmissionClose} color="primary" variant="contained">
+                                            Continue
+                                        </Button>
+                                        <Button onClick={handleSubmissionClose} color="primary" variant="outlined" autoFocus>
+                                            Close
+                                        </Button>
+                                        </Typography>
+  
+                                        
+                                    </Dialog>
                             </Grid>
                         </Grid>
                     
@@ -243,7 +622,144 @@ export default function Swindow(){
                             
                             </Grid>
                             <Grid item xs={4} style={{display:"flex",height:"6.7vh",justifyContent:"flex-end",alignItems:"center"}}>
-                                <Button variant="contained" color="primary" >Update</Button>
+                                <Button variant="contained" color="primary" onClick={handleClickOpen2} >Update</Button>
+                                <Dialog open={open2} onClose={handleClose2} aria-labelledby="form-dialog-title" >
+                                        <DialogTitle>
+                                        <Grid container style={{height:"6vh",display:"flex"}} >
+                                            <Grid items xs={11} style={{height:"6vh",display:"flex"}}>
+                                                <Grid container spacing={2}>
+                                                <Grid item>
+                                                </Grid>
+                                                <Grid item>
+                                                    <Typography component="div" style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center"}}>
+                                                    <NotificationsNoneOutlinedIcon />
+                                                    
+                                                    </Typography>
+                                                
+                                                </Grid>
+                                                <Grid item xs={5}>
+                                                    <Typography style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center",marginLeft:"-5px"}}>Notification Settings </Typography>
+                                                
+                                                </Grid>
+                                                </Grid>
+                                            
+                                            </Grid>
+                                            
+                                            <Grid items xs={1} style={{height:"6vh",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                                            
+                                            <CloseIcon onClick={handleClose2} />
+                                            
+                                                
+                                            </Grid>
+                                            
+                                            
+                                            
+                                        </Grid>
+                                        </DialogTitle>
+
+                                        <Divider/>
+                                        <DialogContent style={{height:"100vh",width:"31vw"}}>
+                                        <DialogContentText>
+
+                                        </DialogContentText>
+                                        <Typography >
+                                            Primary Email
+                                        </Typography>
+                                        <TextField
+                                            autoFocus
+                                            margin="dense"
+                                            id="name"
+                                            label="Enter Email"
+                                            type="email"
+                                            variant="outlined"
+                                            fullWidth
+                                            
+                                        />
+                                        <Typography componen="div" style={{display:"flex",width:"100%",marginTop:"10px"}}>
+                                        <Fab aria-label="add" size="small" style={{background:"#6993FF",color:"white"}}>
+                                        <AddIcon />
+                                        
+                                        </Fab>
+                                        <Typography style={{display:"flex",marginLeft:"15px",alignItems:"center"}}>
+                                            Primary Email
+                                        </Typography>
+                                        </Typography>
+                                        <Divider style={{marginTop:"15px"}}/>
+
+                                        <Typography style={{marginTop:"15px"}}>
+                                            Secondary Email List
+                                        </Typography>
+                                        <TextField
+                                            autoFocus
+                                            margin="dense"
+                                            id="name"
+                                            label="Enter Email"
+                                            type="email"
+                                            variant="outlined"
+                                            fullWidth
+                                            
+                                        />
+                                        <TextField
+                                            autoFocus
+                                            margin="dense"
+                                            id="name"
+                                            label="Enter Email"
+                                            type="email"
+                                            variant="outlined"
+                                            fullWidth
+                                            
+                                        />
+                                        <TextField
+                                            autoFocus
+                                            margin="dense"
+                                            id="name"
+                                            label="Enter Email"
+                                            type="email"
+                                            variant="outlined"
+                                            fullWidth
+                                            
+                                        />
+                                        <Typography componen="div" style={{display:"flex",width:"100%",marginTop:"10px"}}>
+                                        <Fab aria-label="add" size="small" style={{background:"#6993FF",color:"white"}}>
+                                        <AddIcon />
+                                        
+                                        </Fab>
+                                        <Typography style={{display:"flex",marginLeft:"15px",alignItems:"center"}}>
+                                            Add Secondary Email
+                                        </Typography>
+                                        </Typography>
+                                        <Divider style={{marginTop:"15px"}}/>
+                                        <Typography style={{marginTop:"15px"}}>
+                                            Alert Settings
+                                        </Typography>
+                                        <Typography component="div" style={{display:"flex",flexDirection:"column",justifyContent:"flex-start",alignItems:"flex-start"}}>
+                                            <Typography component="div" style={{display:"flex",marginTop:"10px",alignItems:"center"}}>
+                                                <Typography style={{marginRight:"38px"}}> High Risk</Typography>
+                                                <IOSSwitch checked={state.checkedA} onChange={handleChange4} name="checkedA" />
+                                            </Typography>
+                                            <Typography component="div" style={{display:"flex",marginTop:"10px",alignItems:"center"}}>
+                                                <Typography style={{marginRight:"40px"}}> Low Risk</Typography>
+                                                <IOSSwitch checked={state.checkedB} onChange={handleChange4} name="checkedB" />
+                                            </Typography>
+                                            <Typography component="div" style={{display:"flex",marginTop:"10px",alignItems:"center"}}>
+                                                <Typography style={{marginRight:"20px"}}> New Assets</Typography>
+                                                <IOSSwitch checked={state.checkedC} onChange={handleChange4} name="checkedC" />
+                                            </Typography>
+                                            <Typography component="div" style={{display:"flex",marginTop:"10px",alignItems:"center"}}>
+                                                <Typography style={{marginRight:"5px"}}> Vulnerabilities</Typography>
+                                                <IOSSwitch checked={state.checkedD} onChange={handleChange4} name="checkedD" />
+                                            </Typography>                                                                        
+                                        
+                                        </Typography>
+                                        <Divider style={{marginTop:"15px"}}/>
+                                        <Typography component="div" style={{display:"flex",width:"100",justifyContent:"center",marginTop:"15px"}}>
+                                        <Button color="primary" variant="contained" onClick={handleSubmission}> Update Settings</Button>
+                                        </Typography>
+                                        </DialogContent>
+                                </Dialog>
+                                <Dialog>
+
+                                </Dialog>
                             </Grid>
                         </Grid>
                     
