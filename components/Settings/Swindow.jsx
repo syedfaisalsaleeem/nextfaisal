@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
         transform: 'translateX(16px)',
         color: theme.palette.common.white,
         '& + $track': {
-          backgroundColor: '#52d869',
+          backgroundColor: '#6993FF',
           opacity: 1,
           border: 'none',
         },
