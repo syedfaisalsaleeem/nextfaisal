@@ -29,18 +29,29 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import { withStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Select from '@material-ui/core/Select';
+import { Dropdown } from 'semantic-ui-react';
+import Head from "next/head"
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import IconButton from '@material-ui/core/IconButton';
+import Visibility from '@material-ui/icons/Visibility';
+import { Icon, Input } from 'semantic-ui-react'
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
     },
     Typofont:{
-        fontSize:"1rem",
+        fontSize:"1.2rem",
         fontStyle:"normal",
         fontWeight:"800px",
         fontFamily:"Roboto"
     },
     TypoSecondFont:{
-        fontSize:"0.8rem",
+        fontSize:"1rem",
         fontStyle:"normal",
         fontWeight:"800px",
         fontFamily:"Roboto"
@@ -50,6 +61,14 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       color: theme.palette.text.secondary,
     },
+    formControl: {
+        
+        minWidth: "100%",
+        
+      },
+      selectEmpty: {
+        marginTop: theme.spacing(0),
+      },
   }));
   const IOSSwitch = withStyles((theme) => ({
     root: {
@@ -114,6 +133,73 @@ export default function Swindow(){
         checkedB: true,
         checkedC: true,
       });
+    const [st1,set]=React.useState([
+            
+                
+            
+    ]);
+    const [count,inc_count]=React.useState(1);
+
+
+      const [age, setAge] = React.useState('');
+
+      const handleChange = (event) => {
+        setAge(event.target.value);
+      };
+      const addcount=()=>{
+        set([...st1,""])
+      }
+      const addcount1=()=>{
+        
+        const {listi}=st1
+        console.log(listi);
+        inc_count(count+1);
+        
+        set({listi:[...st1.listi,""]})
+        console.log(st1.listi);
+
+        
+        
+    };
+    
+    const subcount=(event)=>{
+        const x=event.target.id
+        const listi=Object.assign([],st1);
+        listi.splice(x,1);
+        
+        
+        set(listi);
+    }
+    const subcount1=(event)=>{
+        
+        const x=event.target.id
+        
+        const {listi}=st1
+        console.log(listi)
+        const listi1=listi.filter(function(listi){
+            var i;
+            console.log(listi,x)
+            if(x===x){
+                return false
+            }
+            else{
+                return true
+            }
+            
+        })
+        console.log(listi1)
+        listi.length=0
+        set({...st1,listi:listi1})
+        console.log(listi)
+    
+        
+        
+       
+        
+    };
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+      };
     const handleClickOpen = () => {
       setOpen(true);
     };
@@ -143,8 +229,24 @@ export default function Swindow(){
       const handleChange4 = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
       };
+      const handletext =(event) =>{
+          const {name,value}=event.target
+          //console.log(name,value)
+          //console.log(st1.indexOf(name))
+          let newArr = [...st1]; // copying the old datas array
+          newArr[name] = value; // replace e.target.value with whatever you want to change it to
+      
+          set(newArr);
+          
+      }
     return(
+
         <React.Fragment>
+        <head>
+            
+
+        
+        </head>
         <CssBaseline />
         <Container maxWidth="xl">
             <Typography component="div" style={{ backgroundColor: 'white', height: '26.5vh' }} >
@@ -160,7 +262,7 @@ export default function Swindow(){
                         
                         </Grid>
                         <Grid item xs={9}>
-                            <Typography paragraph style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center"}}> Account Information </Typography>
+                            <Typography paragraph style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center",fontSize:"16px"}}> Account Information </Typography>
                         
                         </Grid>
                         </Grid>
@@ -230,18 +332,31 @@ export default function Swindow(){
                                         
                                     />
                                     
-                                    <Typography style={{marginTop:"15px"}}>
+                                    <Typography style={{marginTop:"15px"}} gutterBottom>
                                         Company Industry
                                     </Typography>
-                                    <TextField
-                                        autoFocus
-                                        margin="dense"
-                                        id="name"
-                                        label="Email Address"
-                                        type="email"
-                                        variant="outlined"
-                                        fullWidth
-                                    />
+                                    <FormControl className={classes.formControl}>
+                                    
+                                    <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={age}
+                                    onChange={handleChange}
+                                    variant="outlined"
+                                    fullWidth
+                                    style={{height:"40px"}}
+                                    displayEmpty
+          
+                                    
+                                    >
+                                    <MenuItem value="">
+                                        <em>Select Industry</em>
+                                    </MenuItem>
+                                    <MenuItem value={10}>Ten</MenuItem>
+                                    <MenuItem value={20}>Twenty</MenuItem>
+                                    <MenuItem value={30}>Thirty</MenuItem>
+                                    </Select>
+                                    </FormControl>
                                     <Typography style={{marginTop:"15px"}}>
                                         Company Address
                                     </Typography>
@@ -403,7 +518,7 @@ export default function Swindow(){
                         
                         </Grid>
                         <Grid item xs={9}>
-                            <Typography paragraph style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center"}}> Security Information </Typography>
+                            <Typography paragraph style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center",fontSize:"16px"}}> Security Information </Typography>
                         
                         </Grid>
                         </Grid>
@@ -610,7 +725,7 @@ export default function Swindow(){
                         
                         </Grid>
                         <Grid item xs={9}>
-                            <Typography paragraph style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center"}}> Notification Settings </Typography>
+                            <Typography paragraph style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center",fontSize:"16px"}}> Notification Settings </Typography>
                         
                         </Grid>
                         </Grid>
@@ -672,7 +787,7 @@ export default function Swindow(){
                                             label="Enter Email"
                                             type="email"
                                             variant="outlined"
-                                            fullWidth
+                                            style={{width:"60%"}}
                                             
                                         />
                                         <Typography componen="div" style={{display:"flex",width:"100%",marginTop:"10px"}}>
@@ -689,41 +804,37 @@ export default function Swindow(){
                                         <Typography style={{marginTop:"15px"}}>
                                             Secondary Email List
                                         </Typography>
-                                        <TextField
-                                            autoFocus
-                                            margin="dense"
-                                            id="name"
-                                            label="Enter Email"
-                                            type="email"
-                                            variant="outlined"
-                                            fullWidth
+                                        <Grid container justify="center" spacing={1}>
+                                 
+                                        {st1.map((value,index) => (        
+                                                                        
+
+                                                                        
+                                                                         
+                                                                        
+                                                                        <Input    value={value} onChange={handletext} name={index} style={{width:"100vw",marginTop:"10px"}}
+                                                                        icon={<Icon name='cancel' inverted circular link id={index} onClick={subcount} />}
+                                                                        placeholder='Enter Email'
+                                                                      />                  
+                                                                        
+
+
+                                                                    
+                                        
                                             
-                                        />
-                                        <TextField
-                                            autoFocus
-                                            margin="dense"
-                                            id="name"
-                                            label="Enter Email"
-                                            type="email"
-                                            variant="outlined"
-                                            fullWidth
-                                            
-                                        />
-                                        <TextField
-                                            autoFocus
-                                            margin="dense"
-                                            id="name"
-                                            label="Enter Email"
-                                            type="email"
-                                            variant="outlined"
-                                            fullWidth
-                                            
-                                        />
+                                        ))}
+                                        </Grid>
+ 
+              
+                                        
                                         <Typography componen="div" style={{display:"flex",width:"100%",marginTop:"10px"}}>
-                                        <Fab aria-label="add" size="small" style={{background:"#6993FF",color:"white"}}>
+                                        <Button onClick={addcount}>
+                                        <Fab aria-label="add" size="small" style={{background:"#6993FF",color:"white"}} >
                                         <AddIcon />
                                         
                                         </Fab>
+                                        </Button>
+
                                         <Typography style={{display:"flex",marginLeft:"15px",alignItems:"center"}}>
                                             Add Secondary Email
                                         </Typography>

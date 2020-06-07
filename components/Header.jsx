@@ -68,12 +68,13 @@ userp:{
     fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight:"normal",
-    fontSize:"18.8px",
+    fontSize:"21px",
     color:"#0BB783",
 
 },
 user:{
-    marginRight:"10px"
+    marginRight:"10px",
+    marginTop:"15px"
 }
 }));
 
@@ -114,7 +115,7 @@ export default function Header() {
                 </div>
             
             <div className={classes.user}>
-                <p> Hi, User Name</p>
+                <p style={{fontSize:"16px"}}> Hi, User Name</p>
             </div>
             
             
