@@ -248,21 +248,21 @@ export default function Swindow(){
         
         </head>
         <CssBaseline />
-        <Container maxWidth="xl">
-            <Typography component="div" style={{ backgroundColor: 'white', height: '26.5vh' }} >
-                <Typography component="div" style={{ backgroundColor: 'white', height: '6.5vh' }} >
+        <Container maxWidth="xl" style={{marginBottom:"20px"}}>
+            <Typography component="div" style={{ backgroundColor: 'white'  }} >
+                <Typography component="div" style={{ backgroundColor: 'white',height:"42px",marginTop:"5px" }} >
                     <Grid container spacing={0}>
                     <Grid item xs={6}>
                         <Grid container spacing={1}>
-                        <Grid item style={{height:"100%"}}>
-                            <Typography component="div" style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center"}}>
+                        <Grid item >
+                            <Typography component="div" style={{display:"flex",justifyContent:"flex-start",alignItems:"center",height:"42px"}}>
                             <AccountCircleOutlinedIcon/>
                             
                             </Typography>
                         
                         </Grid>
                         <Grid item xs={9}>
-                            <Typography paragraph style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center",fontSize:"16px"}}> Account Information </Typography>
+                            <Typography paragraph style={{display:"flex",justifyContent:"flex-start",alignItems:"center",fontSize:"16px",height:"42px"}}> Account Information </Typography>
                         
                         </Grid>
                         </Grid>
@@ -270,36 +270,36 @@ export default function Swindow(){
                     </Grid>
                     <Grid item xs={6}>
                         <Grid container spacing={0}>
-                            <Grid item xs={8} style={{height:"100%"}}>
+                            <Grid item xs={8} style={{}}>
                             
                             </Grid>
-                            <Grid item xs={4} style={{display:"flex",height:"6.7vh",justifyContent:"flex-end",alignItems:"center"}}>
-                                <Button variant="contained" color="primary" onClick={handleClickOpen} >Update</Button>
+                            <Grid item xs={4} style={{display:"flex",justifyContent:"flex-end",alignItems:"center"}}>
+                                <Button variant="contained" color="primary" onClick={handleClickOpen} style={{position:"static"}}>Update</Button>
                                 <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title" >
                                     
                                     
                                     <DialogTitle>
-                                    <Grid container style={{height:"6vh",display:"flex"}} >
-                                        <Grid items xs={11} style={{height:"6vh",display:"flex"}}>
+                                    <Grid container style={{display:"flex"}} >
+                                        <Grid items xs={11} style={{display:"flex"}}>
                                             <Grid container spacing={2}>
                                             <Grid item>
                                             </Grid>
                                             <Grid item>
-                                                <Typography component="div" style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center"}}>
+                                                <Typography component="div" style={{display:"flex",justifyContent:"flex-start",alignItems:"center"}}>
                                                 <AccountCircleOutlinedIcon />
                                                 
                                                 </Typography>
                                             
                                             </Grid>
                                             <Grid item xs={5}>
-                                                <Typography style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center",marginLeft:"-5px"}}>Account Information </Typography>
+                                                <Typography style={{display:"flex",justifyContent:"flex-start",alignItems:"center",marginLeft:"-5px"}}>Account Information </Typography>
                                             
                                             </Grid>
                                             </Grid>
                                         
                                         </Grid>
                                         
-                                        <Grid items xs={1} style={{height:"6vh",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                                        <Grid items xs={1} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
                                         
                                         <CloseIcon onClick={handleClose} />
                                         
@@ -314,7 +314,7 @@ export default function Swindow(){
                                     
                                     
                                     <Divider/>
-                                    <DialogContent style={{height:"100vh",width:"31vw"}}>
+                                    <DialogContent style={{width:"31vw",height:"100vh"}}>
                                     <DialogContentText>
 
                                     </DialogContentText>
@@ -432,10 +432,10 @@ export default function Swindow(){
                     </Grid>
                 </Typography>
                 <Divider/>
-                <Typography component="div" style={{ backgroundColor: 'white', height: '20vh',marginTop:"0.5vh" }} >
+                <Typography component="div" style={{ backgroundColor: 'white',marginTop:"0.5vh" }} >
                     <Grid container spacing={0}>
-                        <Grid items xs={5} style={{height:"19vh",background:"white"}}>
-                            <Typography component="div" style={{ backgroundColor: 'white', height: '6vh' }}>
+                        <Grid items xs={5} style={{background:"white"}}>
+                            <Typography component="div" style={{ backgroundColor: 'white' }}>
                                 <Typography  className={classes.Typofont}>
                                     Company Name
                                 </Typography>
@@ -443,7 +443,7 @@ export default function Swindow(){
                                     Name goes here
                                 </Typography>
                             </Typography>
-                            <Typography component="div" style={{ backgroundColor: 'white', height: '6vh' }}>
+                            <Typography component="div" style={{ backgroundColor: 'white' }}>
                             <Typography  className={classes.Typofont}>
                                     Company Name
                                 </Typography>
@@ -451,7 +451,7 @@ export default function Swindow(){
                                     Industry goes here
                                 </Typography>
                             </Typography>
-                            <Typography component="div" style={{ backgroundColor: 'white', height: '7vh' }}>
+                            <Typography component="div" style={{ backgroundColor: 'white' }}>
                             <Typography  className={classes.Typofont}>
                                     Company Address
                                 </Typography>
@@ -468,13 +468,13 @@ export default function Swindow(){
 
                         </Grid>
                         <Divider orientation="vertical" flexItem />
-                        <Grid items xs={6} style={{height:"20vh"}}>
+                        <Grid items xs={6} >
                             <Grid container spacing={0}>
-                                <Grid item xs={1} style={{height:"19vh",backgroundColor:"white"}} >
+                                <Grid item xs={1} style={{backgroundColor:"white"}} >
                                 
                                 </Grid>
-                                <Grid item xs={11} style={{height:"19vh"}}>
-                                <Typography component="div" style={{ backgroundColor: 'white', height: '6.5vh' }}>
+                                <Grid item xs={11} style={{}}>
+                                <Typography component="div" style={{ backgroundColor: 'white' }}>
                                     <Typography  className={classes.Typofont}>
                                         Company Person
                                     </Typography>
@@ -482,7 +482,7 @@ export default function Swindow(){
                                         Name goes here
                                     </Typography>
                                 </Typography>
-                                <Typography component="div" style={{ backgroundColor: 'white', height: '6.5vh' }}>
+                                <Typography component="div" style={{ backgroundColor: 'white'}}>
                                 <Typography  className={classes.Typofont}>
                                         Contact Person Position
                                     </Typography>
@@ -490,7 +490,7 @@ export default function Swindow(){
                                         Industry goes here
                                     </Typography>
                                 </Typography>
-                                <Typography component="div" style={{ backgroundColor: 'white', height: '7vh' }}>
+                                <Typography component="div" style={{ backgroundColor: 'white' }}>
                                 <Typography  className={classes.Typofont}>
                                         Contact Person Email
                                     </Typography>
@@ -505,20 +505,20 @@ export default function Swindow(){
                     </Grid>
                 </Typography>
             </Typography>
-            <Typography component="div" style={{ backgroundColor: 'white', height: '16.5vh' }}>
+            <Typography component="div" style={{ backgroundColor: 'white' }}>
 
-            <Typography component="div" style={{ backgroundColor: 'white', height: '6.5vh' }} >
+            <Typography component="div" style={{ backgroundColor: 'white',height:"40px",marginTop:"5px"}} >
                     <Grid container spacing={0}>
                     <Grid item xs={6}>
                         <Grid container spacing={1}>
-                        <Grid item style={{height:"100%"}}>
-                            <Typography component="div" style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center"}}>
+                        <Grid item >
+                            <Typography component="div" style={{display:"flex",justifyContent:"flex-start",alignItems:"center",height:"38px"}}>
                             <SecurityOutlinedIcon/>
                             </Typography>
                         
                         </Grid>
                         <Grid item xs={9}>
-                            <Typography paragraph style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center",fontSize:"16px"}}> Security Information </Typography>
+                            <Typography paragraph style={{display:"flex",justifyContent:"flex-start",alignItems:"center",fontSize:"16px",height:"38px"}}> Security Information </Typography>
                         
                         </Grid>
                         </Grid>
@@ -526,11 +526,11 @@ export default function Swindow(){
                     </Grid>
                     <Grid item xs={6}>
                         <Grid container spacing={0}>
-                            <Grid item xs={8} style={{height:"100%"}}>
+                            <Grid item xs={8} >
                             
                             </Grid>
-                            <Grid item xs={4} style={{display:"flex",height:"6.7vh",justifyContent:"flex-end",alignItems:"center"}}>
-                                <Button variant="contained" color="primary" onClick={handleClickOpen1} >Update</Button>
+                            <Grid item xs={4} style={{display:"flex",justifyContent:"flex-end",alignItems:"center"}}>
+                                <Button variant="contained" color="primary" onClick={handleClickOpen1} style={{position:"static"}}>Update</Button>
                                     <Dialog open={open1} onClose={handleClose1} aria-labelledby="form-dialog-title" >
                                         <DialogTitle>
                                         <Grid container style={{height:"6vh",display:"flex"}} >
@@ -680,8 +680,8 @@ export default function Swindow(){
             <Divider/>
             <Typography>
                             <Grid container spacing={0}>
-                                <Grid item xs={12} style={{height:"10vh",marginTop:"0.5vh"}}>
-                                <Typography component="div" style={{ backgroundColor: 'white', height: '5vh' }}>
+                                <Grid item xs={12} style={{marginTop:"0.5vh"}}>
+                                <Typography component="div" style={{ backgroundColor: 'white' }}>
                                     <Typography  className={classes.Typofont}>
                                        Account User Name
                                     </Typography>
@@ -689,7 +689,7 @@ export default function Swindow(){
                                         User Name Goes Here
                                     </Typography>
                                 </Typography>
-                                <Typography component="div" style={{ backgroundColor: 'white', height: '5vh' }}>
+                                <Typography component="div" style={{ backgroundColor: 'white' }}>
                                 <Typography  className={classes.Typofont}>
                                         Account Password
                                     </Typography>
@@ -712,20 +712,20 @@ export default function Swindow(){
             
             
             
-            <Typography component="div" style={{ backgroundColor: 'white', height: '44vh' }}>
+            <Typography component="div" style={{ backgroundColor: 'white'}}>
 
-            <Typography component="div" style={{ backgroundColor: 'white', height: '6.5vh' }} >
+            <Typography component="div" style={{ backgroundColor: 'white',height:"42px",marginTop:"5px"}} >
                     <Grid container spacing={0}>
                     <Grid item xs={6}>
                         <Grid container spacing={1}>
                         <Grid item style={{height:"100%"}}>
-                            <Typography component="div" style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center"}}>
+                            <Typography component="div" style={{display:"flex",justifyContent:"flex-start",alignItems:"center",height:"42px"}}>
                             <NotificationsNoneOutlinedIcon/>
                             </Typography>
                         
                         </Grid>
                         <Grid item xs={9}>
-                            <Typography paragraph style={{display:"flex",height:"6.7vh",justifyContent:"flex-start",alignItems:"center",fontSize:"16px"}}> Notification Settings </Typography>
+                            <Typography paragraph style={{display:"flex",justifyContent:"flex-start",alignItems:"center",fontSize:"16px",height:"42px"}}> Notification Settings </Typography>
                         
                         </Grid>
                         </Grid>
@@ -733,34 +733,34 @@ export default function Swindow(){
                     </Grid>
                     <Grid item xs={6}>
                         <Grid container spacing={0}>
-                            <Grid item xs={8} style={{height:"100%"}}>
+                            <Grid item xs={8} >
                             
                             </Grid>
-                            <Grid item xs={4} style={{display:"flex",height:"6.7vh",justifyContent:"flex-end",alignItems:"center"}}>
-                                <Button variant="contained" color="primary" onClick={handleClickOpen2} >Update</Button>
+                            <Grid item xs={4} style={{display:"flex",justifyContent:"flex-end",alignItems:"center"}}>
+                                <Button variant="contained" color="primary" onClick={handleClickOpen2} style={{position:"static"}}>Update</Button>
                                 <Dialog open={open2} onClose={handleClose2} aria-labelledby="form-dialog-title" >
                                         <DialogTitle>
-                                        <Grid container style={{height:"6vh",display:"flex"}} >
-                                            <Grid items xs={11} style={{height:"6vh",display:"flex"}}>
+                                        <Grid container style={{display:"flex"}} >
+                                            <Grid items xs={11} style={{display:"flex"}}>
                                                 <Grid container spacing={2}>
                                                 <Grid item>
                                                 </Grid>
                                                 <Grid item>
-                                                    <Typography component="div" style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center"}}>
+                                                    <Typography component="div" style={{display:"flex",justifyContent:"flex-start",alignItems:"center"}}>
                                                     <NotificationsNoneOutlinedIcon />
                                                     
                                                     </Typography>
                                                 
                                                 </Grid>
                                                 <Grid item xs={5}>
-                                                    <Typography style={{display:"flex",height:"6vh",justifyContent:"flex-start",alignItems:"center",marginLeft:"-5px"}}>Notification Settings </Typography>
+                                                    <Typography style={{display:"flex",justifyContent:"flex-start",alignItems:"center",marginLeft:"-5px"}}>Notification Settings </Typography>
                                                 
                                                 </Grid>
                                                 </Grid>
                                             
                                             </Grid>
                                             
-                                            <Grid items xs={1} style={{height:"6vh",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                                            <Grid items xs={1} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
                                             
                                             <CloseIcon onClick={handleClose2} />
                                             
@@ -881,8 +881,8 @@ export default function Swindow(){
             <Divider/>            
             <Typography>
                             <Grid container spacing={0}>
-                                <Grid item xs={12} style={{height:"37.5vh",marginTop:"0.5vh"}}>
-                                <Typography component="div" style={{ backgroundColor: 'white', height: '6vh' }}>
+                                <Grid item xs={12} style={{marginTop:"0.5vh"}}>
+                                <Typography component="div" style={{ backgroundColor: 'white', }}>
                                     <Typography  className={classes.Typofont}>
                                        Primary Email
                                     </Typography>
@@ -890,7 +890,7 @@ export default function Swindow(){
                                         Email Goes Here
                                     </Typography>
                                 </Typography>
-                                <Typography component="div" style={{ backgroundColor: 'white', height: '13vh' }}>
+                                <Typography component="div" style={{ backgroundColor: 'white'}}>
                                 <Typography  className={classes.Typofont}>
                                         Secondary Email
                                     </Typography>
@@ -907,7 +907,7 @@ export default function Swindow(){
                                         Email@email.com
                                     </Typography>
                                 </Typography>
-                                <Typography component="div" style={{ backgroundColor: 'white', height: '18vh' }}>
+                                <Typography component="div" style={{ backgroundColor: 'white'}}>
                                 <Typography  className={classes.Typofont}>
                                         Alert Types
                                         
