@@ -4,6 +4,23 @@ import Header from "../components/Header";
 import CyberDrawer from "../components/Settings/Drawer1"
 
 class Home extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={
+      drawer:true
+    }
+    this.handledrawer=this.handledrawer.bind(this)
+  }
+  
+    
+  
+  handledrawer(){
+    console.log("handledrawer",this.state.drawer)
+    this.setState((prevState)=>{
+      return{drawer:!prevState.drawer}
+    }
+    )
+  }
 render(){  
   return (
     <div className="container">
@@ -15,8 +32,8 @@ render(){
       </Head>
 
       <main>
-        <Header/>
-        <CyberDrawer/>
+        <Header call={this.handledrawer}/>
+        <CyberDrawer call={this.state.drawer}/>
         
       </main>
 

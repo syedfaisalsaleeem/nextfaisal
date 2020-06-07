@@ -101,11 +101,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CyberDrawer() {
+export default function CyberDrawer(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
-
+  console.log(props.call)
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -122,7 +122,7 @@ export default function CyberDrawer() {
         className={classes.drawer}
         variant="persistent"
         anchor="left"
-        open={open}    
+        open={props.call}    
         classes={{
           paper: classes.drawerPaper,
         }}
@@ -165,7 +165,7 @@ export default function CyberDrawer() {
       <Footer/>
       <main
         className={clsx(classes.content, {
-          [classes.contentShift]: open,
+          [classes.contentShift]: props.call,
         })}
       >
         <div className={classes.drawerHeader} />

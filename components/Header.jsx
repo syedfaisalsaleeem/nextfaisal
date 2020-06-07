@@ -14,7 +14,7 @@ import { grey } from '@material-ui/core/colors';
 import NotificationBadge from 'react-notification-badge';
 import {Effect} from 'react-notification-badge';
 import styles from "./Header.module.css"
-
+import CyberDrawer from "../components/Drawer"
 
 
 
@@ -78,13 +78,16 @@ user:{
 }
 }));
 
-export default function Header() {
+export default function Header(props) {
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
-
+  const [drawer,opendrawer]=React.useState(false)
+  console.log(props)
+  const handledrawer =()=>{
+    opendrawer(!open)
+  }
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -98,7 +101,7 @@ export default function Header() {
 
       <AppBar position="static">
         <Toolbar className={classes.tool}>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={props.call}>
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
@@ -155,6 +158,7 @@ export default function Header() {
           
         </Toolbar>
       </AppBar>
+      
     </div>
   );
 }
