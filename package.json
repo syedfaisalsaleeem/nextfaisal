@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy-production":"react-scripts build && scp -r ./build/* user@server_ip_address:/var/www.example.com/html",
+    "deploy-production":"react-scripts build && scp -r ./build/* ismail@167.99.178.141:my-app/my-app/public",
   },
   "dependencies": {
     "@formatjs/intl-relativetimeformat": "^5.2.2",
